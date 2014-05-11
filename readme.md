@@ -1,6 +1,7 @@
 #  使用 AVOS Cloud JavaScript SDK 和 AngularJS 创建 一个 Todo Demo
 ## 为什么选择这两个库做 Todo
 AVOS Cloud JavaScript SDK 负责把数据存储在服务器，提供了 数据查询，保存，更新等常用操作的方法。AngularJS 对于增删改查类型的应用场景非常合适。这块主要用到了 AngularJS的 模板和绑定方面的特性。
+
 ## Step By Step 入门
 这里主要说下 AVOS cloud Javascript SDK 与 AngularJS 结合使用的部分
 ### 初始化 AVOS Cloud JavaScript SDK
@@ -79,7 +80,7 @@ Object.defineProperty(Todo.prototype, "title", {
 或者 $promise
 
 ```
-				var defer = $q.defer();
+var defer = $q.defer();
         var query = new AV.Query(Todo);
         query.find({
           success : function(results) {
@@ -92,4 +93,4 @@ Object.defineProperty(Todo.prototype, "title", {
 
         return defer.promise;
 ```
-
+## 结合 [AVOS Cloud](https:/cn.avoscloud.com) JS SDK 和 AngularJS 可以实现 MEAN 的全栈开发。其中 M(Mongo) E(Express) N(node) 由 AVOS Cloud 完成。
