@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AVOS Cloud Todo</title>
+	<link href="css/bootstrap-combined.min.css" rel="stylesheet">
+	<script src="lib/angular.js"></script>
+	<script src="https://cn.avoscloud.com/scripts/lib/av-0.3.2.min.js"></script>
+	<script src="todo.js"></script>
+</head>
+<body ng-app="todoMod">
+	<div class="container" ng-controller="todoCtrl" >
+			<div >
+			<h1>AVOS Cloud Angular TODO</h1>
+			<div >
+				<h3>TODO 列表</h3>
+			</div>
+			<ul class="unstyled">
+				<li ng-repeat="todo in todos | filter:{done: false}">
+					<div class="controls form-inline">
+						<input id="todo{{$index}}" type="checkbox" ng-change="updateTodoState(todo)" ng-model="todo.done"/>
+						<label for="todo{{$index}}">{{todo.text}}</label>
+					</div>
+				</li>
+			</ul>
+			</div>
+			<hr>
+			<div>
+			<h4>创建 TODO</h4>
+			<form ng-submit="addTodo()">
+				<div class="input-append">
+					<input type="text" ng-model="newTodo.text">
+					<input class="btn btn-primary" type="submit" value="add">
+				</div>
+			</form>
+			</div>
+			<hr>
+			<div>
+			<h3 >已完成 TODO</h3>
+
+			<ul class="unstyled">
+				<li ng-repeat="todo in todos | filter:{done: true}">
+					<div class="controls form-inline">
+						<input id="done{{$index}}" type="checkbox" ng-change="updateTodoState(todo)" ng-model="todo.done"/>
+						<label for="done{{$index}}">{{todo.text}}</label>
+					</div>
+				</li>
+			</ul>
+			</div>
+
+</body>
+</html>
