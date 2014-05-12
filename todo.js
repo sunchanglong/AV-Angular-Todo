@@ -30,6 +30,7 @@
 	  		success: function(result){
 	  			$scope.$apply(function(){
 	  				$scope.todos.push(todo.toJSON());
+	  				$scope.newTodo = {text:"", done: false};
 	  			});
 	  		}
 	  	});
