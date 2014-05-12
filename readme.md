@@ -54,7 +54,7 @@ var module = angular.module("todoMod",[]);
 这里需要注意 `JSON.parse(JSON.stringify(results))`, `results` 是一个普通的 js Array，但里面的元素都是 `AVObject` 类型的实例，需要转化成 angular需要的数据格式。
 
 ### 一个简单的模型就建立起来了
-[查看源码](https://github.com/sunchanglong/AV-Angular-Todo) ，对下载下来直接打开 `index.html` 就可以看到效果了。
+[查看源码](https://github.com/sunchanglong/AV-Angular-Todo) ，下载下来直接打开 `index.html` 就可以看到效果了。
 
 通过 [AVOS Cloud](https://cn.avoscloud.com) 数据管理平台查看，管理数据。需要创建一个自己的 `应用`，并在初始化的时候 替换掉 AV.initialize 里的 `AppId` `AppKey`。
 
